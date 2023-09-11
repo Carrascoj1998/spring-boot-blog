@@ -9,7 +9,11 @@
 <body>
 <div class="container">
   <a th:href="@{/}">Home</a>
-  <form action="#" th:action="@{'/posts/new'}" th:object="${post}">
+  <form action="#"
+        th:action="@{'/posts/new'}"
+        th:object="${post}"
+        method="POST">
+
     <input type="hidden" th:field="*{account}" />
     <input type="hidden" th:field="*{createAt}" />
     <h2>Write New Post</h2>
