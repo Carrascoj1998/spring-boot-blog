@@ -38,7 +38,8 @@ public class MyUserDetailsService implements UserDetailsService {
 
         return new org.springframework.security.core
                 .userdetails
-                .User(account.getEmail(), account.getPassword(), granetedAuthorites);
+                .User(account.getEmail(), account.getPassword(), granetedAuthorites)
+                ;
     }
 
 

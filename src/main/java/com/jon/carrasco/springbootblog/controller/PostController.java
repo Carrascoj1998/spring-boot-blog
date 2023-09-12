@@ -5,6 +5,7 @@ import com.jon.carrasco.springbootblog.models.Post;
 import com.jon.carrasco.springbootblog.service.AccountService;
 import com.jon.carrasco.springbootblog.service.PostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,4 +58,14 @@ public class PostController {
         postService.save(post);
         return "redirect:/posts/" + post.getId();
     }
+
+    @GetMapping("/posts/{id}/edit")
+    @PreAuthorize("isAuthenticated()")
+    public String getPostForEdit(@PathVariable Long id, Model model){
+        //find post by id
+        Optional<Post> optionalPost = postService.getById(id);
+
+        //if post exists p
+    }
+
 }
