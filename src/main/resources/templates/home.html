@@ -23,6 +23,7 @@
                     Account First Name
                 </h5>
                 <h5 th:text="'Published on' + ${post.createAt}">Created At</h5>
+                <h5 th:text="'Last Updated On on' + ${post.updatedAt}">Updated At</h5>
                 <p th:text="${post.body}">body text</p>
                 <br/>
             </div>
